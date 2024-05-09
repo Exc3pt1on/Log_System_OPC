@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\DataLogger\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A13F6E9A-1C1B-4E41-BA76-AC06E780AD42}|DataLogger.csproj|c:\\users\\kimer\\onedrive - usn\\kim\\master\\semester 8\\industrial it\\assignment scada\\datalogger\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A13F6E9A-1C1B-4E41-BA76-AC06E780AD42}|DataLogger.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\DataLogger\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\DataLogger\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T08:48:53.819Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
