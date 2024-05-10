@@ -21,3 +21,26 @@ C:\Users\kimer\OneDrive - USN\Kim\Master\Semester 8\Industrial IT\Assignment SCA
 C:\Users\kimer\OneDrive - USN\Kim\Master\Semester 8\Industrial IT\Assignment SCADA\DataLogger\obj\Debug\DataLogger.csproj.Up2Date
 C:\Users\kimer\OneDrive - USN\Kim\Master\Semester 8\Industrial IT\Assignment SCADA\DataLogger\obj\Debug\DataLogger.exe
 C:\Users\kimer\OneDrive - USN\Kim\Master\Semester 8\Industrial IT\Assignment SCADA\DataLogger\obj\Debug\DataLogger.pdb
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\DataLogger.exe.config
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\DataLogger.exe
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\DataLogger.pdb
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\Newtonsoft.Json.dll
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\Opc.UaFx.Client.dll
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\System.Buffers.dll
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\System.Memory.dll
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\System.ServiceModel.Primitives.dll
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\Newtonsoft.Json.xml
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\Opc.UaFx.Client.xml
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\System.Buffers.xml
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\System.Memory.xml
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\obj\Debug\DataLogger.csproj.AssemblyReference.cache
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\obj\Debug\DataLogger.csproj.CoreCompileInputs.cache
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\obj\Debug\DataLogger.csproj.CopyComplete
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\obj\Debug\DataLogger.exe
+C:\Users\kimer\OneDrive - USN\Kim\Semester 8\IIT\SCADA\Log_System_OPC\obj\Debug\DataLogger.pdb

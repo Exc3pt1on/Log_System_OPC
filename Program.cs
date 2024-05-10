@@ -12,15 +12,31 @@ namespace DataLogger
 {
     internal class Program
     {
-        
+
         static void Main(string[] args)
         {
             Console.WriteLine("Name the log file: ");
             string path = Console.ReadLine() + ".csv";
-            Console.WriteLine("Storing data in "+path);
+            Console.WriteLine("Storing data in " + path);
 
             WriteCsvHeader(path);
 
+            while (true)
+            {
+                try
+                {
+                    Connect(path);
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Connection lost, trying to reconnect...");
+                }
+            }
+            
+        }
+
+        static void Connect(string path)
+        {
             using (var client = new OpcClient("opc.tcp://localhost:4840/")) //"opc.tcp://localhost:4841"
             {
                 client.Connect();
@@ -31,9 +47,16 @@ namespace DataLogger
                     var fan = client.ReadNode("ns=2;s=Fan");
                     Console.WriteLine("Current Temperature is {0}°C, Heat is {1}v, Fan is {2}v", temperature, heat, fan);
 
-                    LogValuesToCsv(path, temperature, heat, fan);
+                    if (path == ".csv")
+                    {
+                        Thread.Sleep(1000);
+                    }
+                    else
+                    {
+                        LogValuesToCsv(path, temperature, heat, fan);
+                        Thread.Sleep(100);
+                    }
 
-                    Thread.Sleep(100);
                 }
             }
         }
