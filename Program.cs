@@ -61,8 +61,8 @@ namespace DataLogger
                     var lowLimitTemp = client.ReadNode("ns=2;s=LowLimitTemp");
                     var highLimitFan = client.ReadNode("ns=2;s=HighLimitFan");
                     var lowLimitFan = client.ReadNode("ns=2;s=LowLimitFan");
-                    var highLimitHeat = client.ReadNode("ns=2;s=HighLimitFan");
-                    var lowLimitHeat = client.ReadNode("ns=2;s=LowLimitFan");
+                    var highLimitHeat = client.ReadNode("ns=2;s=HighLimitHeat");
+                    var lowLimitHeat = client.ReadNode("ns=2;s=LowLimitHeat");
                     double tempD = 0, fanD = 0, heatD = 0, hTempD = 0, lTempD = 0, hFanD = 0, lFanD = 0, hHeatD = 0, lHeatD = 0;
                     Console.WriteLine($"Current Temperature is {temperature}°C, Heat is {heat}v, Fan is {fan}v");
 
@@ -91,6 +91,8 @@ namespace DataLogger
                         double.TryParse(lowLimitHeat.ToString(), out lHeatD);
 
                         WriteToDatabase("temp1", tempD, hTempD, lTempD);
+                        WriteToDatabase("heater1", heatD, hHeatD, lHeatD);
+                        WriteToDatabase("fan1", fanD, hFanD, lFanD);
                         Thread.Sleep(500);
                     }
 
@@ -112,11 +114,11 @@ namespace DataLogger
             {
                 try
                 {
-                    using (SqlCommand command = new SqlCommand("InsertSensorValue", connection))
+                    using (SqlCommand command = new SqlCommand("InsertDeviceValue", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.Add("@SensorName", SqlDbType.NChar).Value = name;
-                        command.Parameters.Add("@SensorValue", SqlDbType.Float).Value = value;
+                        command.Parameters.Add("@DeviceName", SqlDbType.NChar).Value = name;
+                        command.Parameters.Add("@DeviceValue", SqlDbType.Float).Value = value;
                         command.Parameters.Add("@DateTime", SqlDbType.DateTime).Value = dateTime;
                         command.Parameters.Add("@HighLimit", SqlDbType.Float).Value = highLim;
                         command.Parameters.Add("@LowLimit", SqlDbType.Float).Value = lowLim;

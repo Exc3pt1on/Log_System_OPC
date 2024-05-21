@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{A13F6E9A-1C1B-4E41-BA76-AC06E780AD42}|DataLogger.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A13F6E9A-1C1B-4E41-BA76-AC06E780AD42}|DataLogger.csproj|c:\\users\\kimer\\onedrive - usn\\kim\\master\\semester 8\\industrial it\\assignment scada\\datalogger\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{A13F6E9A-1C1B-4E41-BA76-AC06E780AD42}|DataLogger.csproj|C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\DataLogger\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{A13F6E9A-1C1B-4E41-BA76-AC06E780AD42}|DataLogger.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
@@ -30,8 +30,7 @@
               "RelativeToolTip": "App.config",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-05-21T13:47:05.322Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T13:47:05.322Z"
             },
             {
               "$type": "Document",
@@ -41,7 +40,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\kimer\\OneDrive - USN\\Kim\\Master\\Semester 8\\Industrial IT\\Assignment SCADA\\DataLogger\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAGQAAAAAAAAAAAAewGkAAABFAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwEEAAACAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-06T08:48:53.819Z",
               "EditorCaption": ""
