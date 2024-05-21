@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.IdentityModel.Protocols.WSTrust;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
@@ -7,6 +9,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Opc.UaFx.Client;
+using System.Configuration;
+using System.Data;
 
 namespace DataLogger
 {
@@ -33,7 +37,7 @@ namespace DataLogger
                     throw;
                 }
             }
-            
+
         }
         static string NameFile()
         {
@@ -53,21 +57,77 @@ namespace DataLogger
                     var temperature = client.ReadNode("ns=2;s=Temperature");
                     var heat = client.ReadNode("ns=2;s=Heat");
                     var fan = client.ReadNode("ns=2;s=Fan");
-                    Console.WriteLine("Current Temperature is {0}°C, Heat is {1}v, Fan is {2}v", temperature, heat, fan);
+                    var highLimitTemp = client.ReadNode("ns=2;s=HighLimitTemp");
+                    var lowLimitTemp = client.ReadNode("ns=2;s=LowLimitTemp");
+                    var highLimitFan = client.ReadNode("ns=2;s=HighLimitFan");
+                    var lowLimitFan = client.ReadNode("ns=2;s=LowLimitFan");
+                    var highLimitHeat = client.ReadNode("ns=2;s=HighLimitFan");
+                    var lowLimitHeat = client.ReadNode("ns=2;s=LowLimitFan");
+                    double tempD = 0, fanD = 0, heatD = 0, hTempD = 0, lTempD = 0, hFanD = 0, lFanD = 0, hHeatD = 0, lHeatD = 0;
+                    Console.WriteLine($"Current Temperature is {temperature}°C, Heat is {heat}v, Fan is {fan}v");
 
 
 
-                    if (path == ".csv")
+                    if (path == "Logs/.csv")
                     {
-                        // Use "" in filename to not store to file
+                        // Use "" in filename to not store data
                         Thread.Sleep(2000);
                     }
                     else
                     {
                         LogValuesToCsv(path, temperature.ToString(), heat.ToString(), fan.ToString());
+
+                        double.TryParse(temperature.ToString(), out tempD);
+                        double.TryParse(fan.ToString(), out fanD);
+                        double.TryParse(heat.ToString(), out heatD);
+
+                        double.TryParse(highLimitTemp.ToString(), out hTempD);
+                        double.TryParse(lowLimitTemp.ToString(), out lTempD);
+
+                        double.TryParse(highLimitFan.ToString(), out hFanD);
+                        double.TryParse(lowLimitFan.ToString(), out lFanD);
+
+                        double.TryParse(highLimitHeat.ToString(), out hHeatD);
+                        double.TryParse(lowLimitHeat.ToString(), out lHeatD);
+
+                        WriteToDatabase("temp1", tempD, hTempD, lTempD);
                         Thread.Sleep(500);
                     }
 
+
+                }
+            }
+        }
+
+        static void WriteToDatabase(string name, double value, double highLim, double lowLim)
+        {
+            // Method for wrinting the sensor data to the database
+            // Copied from Database Systems Assignment in IIA2017-1 24V Industrial Information Technology
+            // A connection string is created in the 'App.config' file for easy implementation of database connectionstring
+
+            string connectionString = ConfigurationManager.ConnectionStrings["ScadaDB"].ConnectionString;
+            DateTime dateTime = DateTime.Now;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    using (SqlCommand command = new SqlCommand("InsertSensorValue", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.Add("@SensorName", SqlDbType.NChar).Value = name;
+                        command.Parameters.Add("@SensorValue", SqlDbType.Float).Value = value;
+                        command.Parameters.Add("@DateTime", SqlDbType.DateTime).Value = dateTime;
+                        command.Parameters.Add("@HighLimit", SqlDbType.Float).Value = highLim;
+                        command.Parameters.Add("@LowLimit", SqlDbType.Float).Value = lowLim;
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("An error occurred: " + ex.Message);
                 }
             }
         }
@@ -93,5 +153,9 @@ namespace DataLogger
             }
         }
 
+        static void LogToDatabase()
+        {
+
+        }
     }
 }
